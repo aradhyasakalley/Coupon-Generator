@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Modal,
+  StyleSheet
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 
@@ -69,7 +70,7 @@ const SearchPage = () => {
           />
           <TextInput
             ref={searchRef}
-            placeholder="search item here..."
+            placeholder="Search forproducts "
             style={{width: '76%', height: 50}}
             value={search}
             onChangeText={txt => {
@@ -113,89 +114,19 @@ const SearchPage = () => {
         initialScrollIndex={ind}
         renderItem={({item, index}) => {
           return (
-            <View
-              style={{
-                width: '90%',
-
-                borderRadius: 10,
-                borderWidth: 0.5,
-                alignSelf: 'center',
-                marginTop: 20,
-                marginBottom: index == data.length - 1 ? 20 : 0,
-                alignItems: 'center',
-                flexDirection: 'row',
-              }}>
-              <Image
-                source={{uri: item.image}}
-                style={{
-                  width: 60,
-                  height: '90%',
-                  marginLeft: 10,
-                  borderRadius: 10,
-                }}
-              />
-              <View style={{width: '80%'}}>
-                <Text
-                  style={{fontWeight: '600', marginLeft: 10, marginTop: 10}}>
-                  {item.title.substring(0, 30)}
-                </Text>
-                <Text style={{fontSize: 12, margin: 10}}>
-                  {item.description.substring(0, 50)}
-                </Text>
-
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    marginBottom: 10,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 18,
-                      marginLeft: 10,
-                      fontWeight: '800',
-                      color: 'green',
-                    }}>
-                    {'$ ' + item.price}
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      marginLeft: 50,
-                      fontWeight: '800',
-                      color: 'orange',
-                    }}>
-                    {item.rating.rate}
-                  </Text>
-                  <Image
-                    source={require('../../star.png')}
-                    style={{width: 12, height: 12, marginLeft: 5}}
-                  />
-                  <TouchableOpacity
-                    style={{
-                      buyButton: {
-                        backgroundColor: 'green',
-                        borderRadius: 10,
-                        padding: 10,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: 150,
-                        height: 50,
-                      },
-                    }}>
-                    <Text
-                      style={{
-                        buyButtonText: {
-                          color: 'white',
-                          fontWeight: 'bold',
-                          fontSize: 16,
-                        },
-                      }}>
-                      Buy Now
-                    </Text>
-                  </TouchableOpacity>
-                </View>
+            <View style={styles.main}>
+            <TouchableOpacity style={styles.card}>
+              <Image source={{uri: item.image}} style={styles.image} />
+              <View style={styles.cardContent}>
+                <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.price}>${item.price}</Text>
+                <Text style={styles.description}>{item.description.substring(1,40)}</Text>
+                
+                <TouchableOpacity style={styles.buyButton}>
+                  <Text style={styles.buyButtonText}>Buy Now</Text>
+                </TouchableOpacity>
               </View>
+            </TouchableOpacity>
             </View>
           );
         }}
@@ -296,3 +227,80 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
+
+const styles = StyleSheet.create({
+  card: {
+
+    backgroundColor: '#F5EBE0',
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    flexDirection: 'row',
+    
+    
+  },
+  main:{
+    padding:20
+  },
+  image: {
+    margin:20,
+    width: 150,
+    height: 200,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+  },
+  cardContent: {
+    flex: 1,
+    padding: 10,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  price: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#e91e63',
+    marginBottom: 5,
+  },
+  description: {
+    fontSize: 14,
+    color: '#999',
+    marginBottom: 5,
+  },
+  rating: {
+    fontSize: 14,
+    color: '#999',
+    marginBottom: 5,
+  },
+  buyButton: {
+    backgroundColor: '#DBA39A',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  buyButtonText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+});
+
+

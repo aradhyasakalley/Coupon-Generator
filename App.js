@@ -9,8 +9,10 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import CouponCard from './src/components/CouponCard';
+import Card from './src/screens/Card';
+
 import CardList from './src/screens/CardList';
+import Coupon from './src/screens/Coupon';
 import FetchDemo from './src/screens/FetchDemo';
 
 

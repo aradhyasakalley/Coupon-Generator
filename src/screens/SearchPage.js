@@ -18,6 +18,7 @@ const SearchPage = () => {
   const [ind, setInd] = useState(0);
   const [oldData, setOldData] = useState([]);
   useEffect(() => {
+    // fetch('https://localhost:27017/products')
     fetch('https://fakestoreapi.com/products')
       .then(res => res.json())
       .then(response => {

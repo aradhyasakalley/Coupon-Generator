@@ -10,6 +10,8 @@ import {
   View,
 } from 'react-native';
 import CouponCard from './src/components/CouponCard';
+import CardList from './src/screens/CardList';
+import FetchDemo from './src/screens/FetchDemo';
 
 
 import HomeScreen from './src/screens/HomeScreen';

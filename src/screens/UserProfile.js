@@ -2,11 +2,11 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import CouponCard from '../components/CouponCard';
 
-const HomeScreen = () => {
+const UserProfile = () => {
   return (
     <ScrollView>
       <View>
-        <Text style={styles.mainHeader}>Home Screen</Text>
+        <Text style={styles.mainHeader}>User Profile</Text>
         <CouponCard />
         <CouponCard />
         <CouponCard />
@@ -18,7 +18,7 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default UserProfile;
 
 const styles = StyleSheet.create({
   mainHeader: {

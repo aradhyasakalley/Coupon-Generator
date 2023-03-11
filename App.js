@@ -13,9 +13,11 @@ import CouponCard from './src/components/CouponCard';
 import HomeScreen from './src/screens/HomeScreen';
 
 import LoginScreen from './src/screens/LoginScreen';
+import SavedCoupons from './src/screens/SavedCoupons';
 import SignUpScreen from './src/screens/SignUpScreen';
+import UserProfile from './src/screens/UserProfile';
 const App = () => {
-  return <HomeScreen />;
+  return <UserProfile />;
 };
 
 const styles = StyleSheet.create({

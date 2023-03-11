@@ -27,10 +27,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   cardImage: {
-    width: 100,
+    width: 200,
     height: 100,
-    borderTopLeftRadius: 10,
-    borderBottomLeftRadius: 10,
+    borderRadius:10,
+    marginLeft:10
+
   },
   couponContent: {
     flex: 1,

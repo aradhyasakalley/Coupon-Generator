@@ -10,14 +10,17 @@ import {
   View,
 } from 'react-native';
 import CouponCard from './src/components/CouponCard';
+
+
 import HomeScreen from './src/screens/HomeScreen';
 
 import LoginScreen from './src/screens/LoginScreen';
 import SavedCoupons from './src/screens/SavedCoupons';
+import SearchPage from './src/screens/SearchPage';
 import SignUpScreen from './src/screens/SignUpScreen';
 import UserProfile from './src/screens/UserProfile';
 const App = () => {
-  return <UserProfile />;
+  return <SearchPage />;
 };
 
 const styles = StyleSheet.create({

@@ -9,6 +9,8 @@ import {
   StyleSheet
 } from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
+import { useNavigation } from "@react-navigation/native";
+
 
 const SearchPage = () => {
   const [visible, setVisible] = useState(false);
@@ -18,6 +20,10 @@ const SearchPage = () => {
   const listRef = useRef();
   const [ind, setInd] = useState(0);
   const [oldData, setOldData] = useState([]);
+  const navigation = useNavigation();
+  const onBuyPressed = () => {
+    navigation.navigate('list')
+  }
   useEffect(() => {
     // fetch('https://localhost:27017/products')
     fetch('https://fakestoreapi.com/products')
@@ -122,7 +128,7 @@ const SearchPage = () => {
                 <Text style={styles.price}>${item.price}</Text>
                 <Text style={styles.description}>{item.description.substring(1,40)}</Text>
                 
-                <TouchableOpacity style={styles.buyButton}>
+                <TouchableOpacity onPress={onBuyPressed} style={styles.buyButton}>
                   <Text style={styles.buyButtonText}>Buy Now</Text>
                 </TouchableOpacity>
               </View>

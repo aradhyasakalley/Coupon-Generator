@@ -9,7 +9,7 @@ const SignUpScreen = () => {
 
 
   const onSignUpPressed = () => {
-    navigation.navigate("SignUpPage");
+    navigation.navigate("Home");
   }
 
   const handleLogin = () => {

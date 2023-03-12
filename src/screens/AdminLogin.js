@@ -21,6 +21,9 @@ const AdminLogin = () => {
       Alert.alert('Error', 'Please enter your password');
       return;
     }
+    else{
+      navigation.navigate('transit')
+    }
    
     // TODO: Handle login logic here
   };

@@ -21,6 +21,9 @@ const LoginScreen = () => {
       Alert.alert('Error', 'Please enter your password');
       return;
     }
+    else{
+      navigation.navigate('Home')
+    }
    
     // TODO: Handle login logic here
   };

@@ -24,9 +24,10 @@ import Role from './src/screens/Role';
 import SavedCoupons from './src/screens/SavedCoupons';
 import SearchPage from './src/screens/SearchPage';
 import SignUpScreen from './src/screens/SignUpScreen';
+import StackNavigator from './src/screens/StackNavigator';
 import UserProfile from './src/screens/UserProfile';
 const App = () => {
-  return <Role/>;
+  return <StackNavigator/>;
 };
 
 const styles = StyleSheet.create({

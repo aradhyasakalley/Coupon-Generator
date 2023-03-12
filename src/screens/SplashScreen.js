@@ -11,7 +11,7 @@ const SplashScreen = () => {
 
   const navigation = useNavigation();
 const onHomePressed = () =>{
-    navigation.navigate("Login");
+    navigation.navigate("roles");
 }
 
   useEffect(() => {

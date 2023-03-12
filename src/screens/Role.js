@@ -1,14 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 const Role = () => {
+  const navigation =useNavigation();
+  const onUserPressed = () => {
+    navigation.navigate('ulogin');
+  }
+  const onAdminPressed = () => {
+    navigation.navigate('usignup');
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.headerText}>Select Role</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={onUserPressed} style={styles.button}>
         <Text style={styles.buttonText}>User</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={onAdminPressed} style={styles.button}>
         <Text style={styles.buttonText}>Admin</Text>
       </TouchableOpacity>
     </View>

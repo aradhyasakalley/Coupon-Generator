@@ -8,9 +8,9 @@ const AdminSignup = () => {
 
 
 
-  const onSignUpPressed = () => {
-    navigation.navigate("SignUpPage");
-  }
+  // const onSignUpPressed = () => {
+  //   navigation.navigate("Home");
+  // }
 
   const handleLogin = () => {
     if (!username) {
@@ -20,6 +20,9 @@ const AdminSignup = () => {
     if (!password) {
       Alert.alert('Error', 'Please enter your password');
       return;
+    }
+    else{
+      navigation.navigate('alogin')
     }
    
     // TODO: Handle login logic here
@@ -51,7 +54,7 @@ const AdminSignup = () => {
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Sign Up As Admin</Text>
         </TouchableOpacity>
-        <Text style={styles.para} onPress={onSignUpPressed}>New here? Sign Up</Text>
+        {/* <Text style={styles.para} onPress={onSignUpPressed}>New here? Sign Up</Text> */}
       </View>
     </View>
   );

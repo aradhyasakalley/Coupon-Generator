@@ -43,7 +43,7 @@ const UserData = () => {
         return;
       }
     else{
-      navigation.navigate("Generator");
+      navigation.navigate("coupon");
     }
     // TODO: Handle login logic here
   };

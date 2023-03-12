@@ -45,7 +45,7 @@ const UserDataDy = () => {
     //     return;
     //   }
     else{
-      navigation.navigate("Coup");
+      navigation.navigate("coupon");
     }
     // TODO: Handle login logic here
   };

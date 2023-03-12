@@ -10,7 +10,7 @@ const OnboardingScreen = () => {
     
     
     const handleAnimationFinish = () => {
-      navigation.navigate('First'); // replace 'NextScreen' with the name of your screen
+      navigation.navigate('splash'); // replace 'NextScreen' with the name of your screen
     };
     // const onButtonPressed = () => {
     //     navigation.navigate("First")

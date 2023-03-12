@@ -15,15 +15,15 @@ const Transition = () => {
       };
 
       const staticpressed = () => {
-navigation.navigate("Data")
+navigation.navigate("static")
       }
 
       const dynamicpressed= () => {
-navigation.navigate("Data2")
+navigation.navigate("dynamic")
       }
       
   return (
-    <ImageBackground source={require('./multicoupon.jpg')} style={{flex: 1,}}>
+    <ImageBackground source={require('../../multicoupon.jpg')} style={{flex: 1,}}>
     <View style={{ flex: 1 }}>
   <TouchableOpacity onPress={handleButtonPress} style={{ 
     backgroundColor: 'blue', 

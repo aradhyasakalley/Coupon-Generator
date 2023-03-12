@@ -8,10 +8,15 @@ import {
   Share,
   Animated,
 } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 const Coupon = ({item}) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const flipAnim = useRef(new Animated.Value(0)).current;
+  const navigation = useNavigation();
+  const onUsePressed = () => {
+    navigation.navigate('os')
+  }
 
   const flipCard = () => {
     setIsFlipped(!isFlipped);
@@ -42,7 +47,7 @@ const Coupon = ({item}) => {
         <Text style={styles.validity}>{item.category}</Text>
       </View>
       <Text style={styles.description}>{item.description.substring(0,100)}</Text>
-      <TouchableOpacity  style={styles.useButton}>
+      <TouchableOpacity onPress={onUsePressed} style={styles.useButton}>
         <Text style={styles.useButtonText}>Use Coupon</Text>
       </TouchableOpacity>
     </TouchableOpacity>

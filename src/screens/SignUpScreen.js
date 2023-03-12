@@ -49,7 +49,7 @@ const SignUpScreen = () => {
           onChangeText={setPassword}
         />
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Sign Up</Text>
+          <Text style={styles.buttonText}>Sign Up As User</Text>
         </TouchableOpacity>
         <Text style={styles.para} onPress={onSignUpPressed}>New here? Sign Up</Text>
       </View>

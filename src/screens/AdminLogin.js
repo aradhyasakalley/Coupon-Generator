@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text, Alert } from 'react-native';
 import LottieView from 'lottie-react-native';
 
-const LoginScreen = () => {
+const AdminLogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -49,7 +49,7 @@ const LoginScreen = () => {
           onChangeText={setPassword}
         />
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Login As User</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         
       </View>
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default LoginScreen;
+export default AdminLogin;

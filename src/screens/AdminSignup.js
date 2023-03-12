@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TextInput, TouchableOpacity, Text, Alert } from 'react-native';
 import LottieView from 'lottie-react-native';
 
-const LoginScreen = () => {
+const AdminSignup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,9 +27,9 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Please Login To Continue</Text>
+      <Text style={styles.header}>Create A New Account</Text>
       <LottieView
-        source={require('../../78126-secure-login.json')}
+        source={require('../../24699-man-account-icon.json')}
         autoPlay
         loop
         style={styles.animation}
@@ -49,9 +49,9 @@ const LoginScreen = () => {
           onChangeText={setPassword}
         />
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Login As User</Text>
+          <Text style={styles.buttonText}>Sign Up As Admin</Text>
         </TouchableOpacity>
-        
+        <Text style={styles.para} onPress={onSignUpPressed}>New here? Sign Up</Text>
       </View>
     </View>
   );
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default LoginScreen;
+export default AdminSignup;

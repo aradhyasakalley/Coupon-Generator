@@ -19,12 +19,13 @@ import FetchDemo from './src/screens/FetchDemo';
 import HomeScreen from './src/screens/HomeScreen';
 
 import LoginScreen from './src/screens/LoginScreen';
+import OrderSummaryPage from './src/screens/OrderSummaryPage';
 import SavedCoupons from './src/screens/SavedCoupons';
 import SearchPage from './src/screens/SearchPage';
 import SignUpScreen from './src/screens/SignUpScreen';
 import UserProfile from './src/screens/UserProfile';
 const App = () => {
-  return <SearchPage />;
+  return <OrderSummaryPage/>;
 };
 
 const styles = StyleSheet.create({

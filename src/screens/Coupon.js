@@ -35,101 +35,71 @@ const Coupon = ({item}) => {
   const frontAnimatedStyle = {transform: [{rotateY: frontInterpolate}]};
   const backAnimatedStyle = {transform: [{rotateY: backInterpolate}]};
   return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={flipCard}>
-        <Animated.View style={[styles.card, frontAnimatedStyle]}>
-          <Image style={styles.images} source={{uri: item.image}} />
-          <View>
-            <Text style={styles.title}>{item.type}</Text>
-            <Text style={styles.description}>{item.category}</Text>
-          </View>
-        </Animated.View>
-
-        <Animated.View
-          style={[styles.card, styles.backCard, backAnimatedStyle]}>
-          <Text style={styles.couponCode}>{item.category}</Text>
-          <Text style={styles.couponCode2}>{item.price}</Text>
-        </Animated.View>
+    
+    <TouchableOpacity  style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{item.title.substring(0,20)}..</Text>
+        <Text style={styles.validity}>{item.category}</Text>
+      </View>
+      <Text style={styles.description}>{item.description.substring(0,100)}</Text>
+      <TouchableOpacity  style={styles.useButton}>
+        <Text style={styles.useButtonText}>Use Coupon</Text>
       </TouchableOpacity>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    // backgroundColor:'yellow'
-    backgroundColor: '#FFFDD0',
-
-    // justifyContent: 'center',
-  },
-  card: {
-    width: 372,
-    marginTop: 20,
-    height: 200,
-    flexDirection: 'row',
-    // backgroundColor: 'blue',
-    borderRadius: 10,
-    alignItems: 'center',
-    // justifyContent: 'space-evenly',
-    justifyContent: 'space-between',
-    backfaceVisibility: 'hidden',
-    // borderColor:'black',
-    // borderWidth:10,
-    backgroundColor: '#fffceb',
-    borderRadius: 10,
-    padding: 10,
-    margin: 10,
-    shadowColor: '#e9e0d4',
-    shadowOffset: {
-      width: 0,
-      height: 2,
+    container: {
+    //   padding:25,
+      backgroundColor: '#ffffff',
+      padding: 20,
+      borderRadius: 10,
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 2,
+      },
+      main:{
+       padding:10
+      },
+      shadowOpacity: 0.25,
+      shadowRadius: 3.84,
+      elevation: 5,
+      marginBottom: 20,
+      margin:20
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  backCard: {
-    position: 'absolute',
-    top: 0,
-    flexDirection: 'column',
-    justifyContent: 'space-evenly',
-  },
-  images: {
-    width: 150,
-    height: 160,
-    borderRadius: 10,
-    marginLeft: 5,
-    marginTop: 5,
-    marginBottom: 5,
-  },
-  couponTitle: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    // marginRight: 20,
-  },
-  couponTitle1: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    marginRight: 10,
-    marginTop: 20,
-  },
-  couponCode: {
-    fontSize: 30,
-    color: '#777',
-    justifyContent: 'center',
-    marginLeft: 10,
-  },
-  couponCode2: {
-    fontSize: 18,
-    color: '#777',
-    justifyContent: 'center',
-    marginLeft: 10,
-    marginTop: 10,
-  },
-});
+    titleContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 10,
+    },
+    title: {
+      fontSize: 18,
+      fontWeight: 'bold',
+    },
+    validity: {
+      fontSize: 12,
+      color: '#666666',
+    },
+    description: {
+      fontSize: 14,
+      marginBottom: 10,
+    },
+    useButton: {
+      backgroundColor: '#ff9900',
+      padding: 10,
+      borderRadius: 5,
+      alignSelf: 'flex-end',
+      marginRight:3,
+      
+    },
+    useButtonText: {
+      color: '#ffffff',
+      fontWeight: 'bold',
+      fontSize: 14,
+    },
+  });
 
 export default Coupon;

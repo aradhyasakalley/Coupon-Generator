@@ -20,12 +20,13 @@ import HomeScreen from './src/screens/HomeScreen';
 
 import LoginScreen from './src/screens/LoginScreen';
 import OrderSummaryPage from './src/screens/OrderSummaryPage';
+import Role from './src/screens/Role';
 import SavedCoupons from './src/screens/SavedCoupons';
 import SearchPage from './src/screens/SearchPage';
 import SignUpScreen from './src/screens/SignUpScreen';
 import UserProfile from './src/screens/UserProfile';
 const App = () => {
-  return <OrderSummaryPage/>;
+  return <Role/>;
 };
 
 const styles = StyleSheet.create({
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   sectionDescription: {
-    marginTop: 8,
+    marginTop: 9,
     fontSize: 18,
     fontWeight: '400',
   },
